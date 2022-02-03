@@ -63,11 +63,24 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+    
+    - Client fetch is fine so we will check the params for the POST request with byebug
+    - Params for the POST request are going through fine but name error for the create (Toys.create should be Toy.create)
+    - Fixed syntax error. Post is functional 
 
 - Update the number of likes for a toy
 
   - How I debugged:
+    
+    - Start with putting in the update request and check our Network requests in Chrome
+    - Unexpected end of Json error. We aren't sending any json back after the update request
+    - Added JSON response in Controller. Now working
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+
+    - Start with making delete request and checking network in chrome.
+    - 404 not found. Checking Routes for a Delete.
+    - Routes did not have a destroy path added. Added and going back to first step.
+    - Delete working. Was just missing :destroy in routes.
